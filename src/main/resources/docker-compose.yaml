@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db1:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - db1:/data/db
+  db2:
+    image: mongo:latest
+    ports:
+      - '27018:27017'
+    volumes:
+      - db2:/data/db
+volumes:
+  db1:
+    driver:
+      local
+  db2:
+    driver:
+      local
